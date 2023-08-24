@@ -1,0 +1,655 @@
+/* ... */
+header {
+    display: flex;
+    padding: 1rem 5vw;  /* 1rem는 기본 폰트 크기에 해당하며, 5vw는 뷰포트 너비의 5%에 해당합니다. */
+    justify-content: space-between;
+    align-items: center;
+    background: #BFDD9B;
+}
+
+#logo {
+    /* float: left; 삭제 */
+}
+
+#menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#menu li {
+    margin: 0 10px;
+}
+
+#menuToggle {
+    display: none;
+}
+
+/* 아래 코드 추가 */
+#menu.menu-active {
+    display: flex;
+}
+
+
+
+/* 섹션1 스타일 */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-container {
+    display: flex;
+    animation: slide 7.5s infinite; /* 3개 이미지 x 2.5초 = 7.5초 */
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.nav-dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #000;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100%);
+    }
+    66% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(-300%);
+    }
+}
+/* ... */
+
+/* 섹션2 스타일 */
+#section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* 화면 높이 전체를 차지하도록 설정 */
+    background-color: #70bc9b;  /* 원하는 배경색으로 수정 가능 */
+    padding: 2rem;
+    text-align: center;
+}
+
+#section2 .ghost-button {
+    border: 2px solid #000;  /* 테두리 색상 */
+    padding: 10px 20px;
+    background-color: transparent; /* 배경색 투명 */
+    color: #000;  /* 글씨 색상 */
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#section2 .ghost-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);  /* 호버 효과를 위한 배경 색상 */
+}
+
+#section2 .content p {
+    margin-bottom: 20px;
+}
+
+/*섹션 3*/
+
+#section3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* 화면 높이 전체를 차지하도록 설정 */
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 12.5rem;
+}
+#section3 input {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+    display: flex;
+    transform-style: preserve-3d;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cards {
+    position: relative;
+    height: 640px;
+    width: 640px;
+    margin-bottom: 20px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.cards label {
+    position: absolute;
+    width: 640px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: transform 0.55s ease;
+}
+
+.cards .card{
+    position: relative;
+    height: 100%;
+    background-color: #72d3b0;
+    border-radius: 10px;
+    padding: 30px 35px;
+}
+
+.card .image{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .image img{
+    border-radius: 5px;
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);
+    margin-top: 23px;
+    width: 86%;
+    height: 29rem;
+    object-fit: cover;
+}
+
+.card .image .dots{
+    text-align: center;
+}
+
+.dots div{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.dots div:nth-child(1){
+    background-color: var(--current-color1);
+}
+
+.dots div:nth-child(2){
+    background-color: #5B85F9;
+}
+
+.dots div:nth-child(3){
+    background-color: #000;
+}
+
+.card .infos{
+    display: block;
+    text-align: end;
+    padding-top: 60px;
+}
+
+.infos span{
+    display: block;
+}
+
+.infos .name{
+    font-size: 30px;
+    color: var(--current-color1);
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    padding-left: 25%;
+    transition: all .6s ease;
+}
+
+.infos .lorem{
+    font-size: 15.5px;
+    color: #ECEAED;
+    letter-spacing: 3px;
+}
+
+.card .btn-contact{
+    width: 100%;
+    height: 60px;
+    margin: 35px auto;
+    border-radius: 5px;
+    background-color: var(--current-color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 10px;
+    font-weight: 700;
+    transition: all .7s ease;
+}
+
+#s1:checked~.cards #slide4,
+#s2:checked~.cards #slide5,
+#s3:checked~.cards #slide1,
+#s4:checked~.cards #slide2,
+#s5:checked~.cards #slide3 {
+    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
+    transform: translate3d(-70%, 0, -220px);
+    --current-color1: #ECEAED;
+    --current-color2: #72d3b0;
+}
+
+#s1:checked~.cards #slide5,
+#s2:checked~.cards #slide1,
+#s3:checked~.cards #slide2,
+#s4:checked~.cards #slide3,
+#s5:checked~.cards #slide4 {
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 45%);
+    transform: translate3d(-35%, 0, -120px);
+    --current-color1: #ECEAED;
+    --current-color2: #72d3b0;
+}
+
+#s1:checked~.cards #slide1,
+#s2:checked~.cards #slide2,
+#s3:checked~.cards #slide3,
+#s4:checked~.cards #slide4,
+#s5:checked~.cards #slide5 {
+    box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 50%);
+    transform: translate3d(0, 0, 0);
+    --current-color1: #fad00c;
+    --current-color2: #ECEAED;
+}
+
+#s1:checked~.cards #slide2,
+#s2:checked~.cards #slide3,
+#s3:checked~.cards #slide4,
+#s4:checked~.cards #slide5,
+#s5:checked~.cards #slide1 {
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 45%);
+    transform: translate3d(35%, 0, -120px);
+    --current-color1: #ECEAED;
+    --current-color2: #72d3b0;
+}
+
+#s1:checked~.cards #slide3,
+#s2:checked~.cards #slide4,
+#s3:checked~.cards #slide5,
+#s4:checked~.cards #slide1,
+#s5:checked~.cards #slide2 {
+    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
+    transform: translate3d(70%, 0, -220px);
+    --current-color1: #ECEAED;
+    --current-color2: #72d3b0;
+}
+/**/
+
+/*섹션 4*/
+#section4 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(229, 229, 247, 0.8); /* 배경 색상의 투명도만 조절 */
+    background-image: linear-gradient(#72d3b0 1px, transparent 1px), linear-gradient(to right, #72d3b0 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.cardo {
+    width: 70%;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ghost-button {
+    border: 2px solid #72d3b0;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #72d3b0;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.ghost-button:hover {
+    background-color: #72d3b0;
+    color: #e5e5f7;
+}
+/**/
+
+
+/*섹션 5*/
+#section5 {
+    height: 100vh; /* 브라우저 높이와 동일하게 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5f7; 
+    padding: 5vh; /* 섹션 내부의 여백을 화면 높이의 5%로 설정 */
+}
+
+.wrap {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 5vh; /* 하단 여백을 화면 높이의 5%로 설정 */
+    width: 80vw; /* 뷰포트의 80% 너비 */
+}
+ 
+.imager, .text {
+    width: 50%; 
+    padding: 2vh 2vw; /* 상하는 화면 높이의 2%, 좌우는 화면 너비의 2% 패딩 적용 */
+}
+ 
+video {
+    display: block;
+    max-width: 100%; 
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+ 
+ .wrap:nth-child(even) { /* 짝수 번째만 지정 */
+    flex-direction: row-reverse; /* 요소 위치 반전 */
+    
+ }
+ 
+ .text {
+    padding: 0 30px;
+    width: 50%;
+ }
+ 
+ video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+ }
+
+
+
+/*섹션 7*/
+#section7 {
+    height: 100vh; /* 브라우저 높이와 동일하게 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5f7; 
+    padding: 5vh; /* 섹션 내부의 여백을 화면 높이의 5%로 설정 */
+}
+.wrapper{
+	width: 100%;
+	height: 100%;
+}
+
+.lboard_section{
+	width: 80rem;
+	height: 40rem;
+	margin: 100px auto 0;
+	background: #f94f62;
+	padding: 25px 40px;
+	position: relative;
+	border-radius: 5px;
+}
+
+.lboard_section .lboard_tabs ul{
+	display: flex;
+}
+
+.lboard_section .lboard_tabs ul li{
+	margin-right: 50px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #3a3d51;
+	cursor: pointer;
+}
+
+.lboard_section .lboard_tabs ul li:hover,
+.lboard_section .lboard_tabs ul li.active{
+	color: #fff;
+}
+
+.lboard_wrap{
+	position: absolute;
+	top: 70px;
+	left: 40px;
+	background: #ffd300;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+
+.lboard_wrap .lboard_item{
+	padding: 25px;
+}
+
+.lboard_wrap .lboard_mem{
+	display: flex;
+	align-items: center;
+	padding: 15px 0;
+	border-bottom: 1px solid #ffe773;
+}
+
+.lboard_wrap .lboard_mem:first-child{
+	padding-top: 0;
+}
+
+.lboard_wrap .lboard_mem:last-child{
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.lboard_wrap .lboard_mem .imgable{
+	width: 50px;
+}
+
+.lboard_wrap .lboard_mem img{
+	display: block;
+	width: 100%;
+}
+
+.lboard_wrap .lboard_mem .name_bar{
+	margin: 0 20px;
+	width: calc(100% - 150px);
+}
+
+.lboard_wrap .lboard_mem .name_bar p{
+	color: #3a3d51;
+}
+
+.lboard_wrap .lboard_mem .name_bar p span{
+	margin-right: 5px;
+}
+
+.lboard_wrap .lboard_mem .points{
+	width: 100px;
+	color: #3a3d51;
+}
+
+.lboard_wrap .lboard_mem .name_bar .bar_wrap{
+	width: 100%;
+	height: 5px;
+	background: #d5b000;
+	margin-top: 5px;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+}
+
+.lboard_wrap .lboard_mem .name_bar .bar_wrap .inner_bar{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 5px;
+	background: #fff;
+	border-radius: 5px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+
+
+
+
+
+
+/*푸터*/
+
+.parallax-section{
+
+    z-index: 100;
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    background-image: url(./images/bg-back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.parallax-section .title{
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 7;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax-section .title span{
+
+    text-transform: uppercase;
+    font-size: 100px;
+    letter-spacing: 50px;
+    font-weight: 900;
+}
+
+.parallax-section .balloons{
+
+    position: absolute;
+    z-index: 2;
+    transform-style: preserve-3d;
+}
+
+.parallax-section .balloon1{
+
+    left: 0;
+    top: 25%;
+}
+
+.parallax-section .balloon2{
+
+    right: 3%;
+    top: 15%;
+}
+
+.parallax-section .balloon3{
+
+    bottom: -16%;
+    z-index: 9;
+}
+
+.parallax-section .balloon4{
+
+    z-index: 8;
+}
+
+.section8{
+    padding: 200px 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section8 h2{
+    font-size: 70px;
+    font-weight: 400;
+}
+
+
+
+/**/
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #menu li {
+        margin: 0 5px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    #menu li {
+        margin: 10px 0;
+    }
+
+    #menuToggle {
+        display: block;
+    }
+
+    .menu-active {
+        display: flex;
+    }
+}
+/* ... */
+
+
+/* 모바일 기본 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header, section, footer {
+    padding: 20px;
+}
+
+/* 태블릿 */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* 태블릿용 스타일 */
+}
+
+/* 웹 */
+@media screen and (min-width: 1024px) {
+    /* 웹용 스타일 */
+}
